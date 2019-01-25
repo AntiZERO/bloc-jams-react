@@ -12,7 +12,7 @@ class Album extends Component {
 	this.state = {
 		album: album,
 		currentSong: album.songs[0],
-		isPlaying: false
+		isPlaying: false,
 	};
 
 this.audioElement = document.createElement('audio');
@@ -45,6 +45,15 @@ handleSongClick(song) {
 	}
 }
 
+mouseEnter() {
+	console.log("Enter Test")
+	
+}
+
+mouseLeave() {
+	console.log("Leave Test")
+}
+
 
 	render() {
 		return (
@@ -66,8 +75,8 @@ handleSongClick(song) {
 					<tbody>
 						{
 							this.state.album.songs.map( (songs, index) =>
-								<tr className="song" key={index} onClick={() => this.handleSongClick(songs)} >
-									<td>{index+1}</td>
+								<tr className="song" key={index} onClick={() => this.handleSongClick(songs)} onMouseEnter={() => this.mouseEnter()} onMouseLeave={() => this.mouseLeave()} >
+									<span id="icon"><td>{index+1}</td></span>
 									<td>{songs.title}</td>
 									<td>{songs.duration} seconds</td>
 								</tr>
