@@ -13,6 +13,7 @@ class Album extends Component {
 		album: album,
 		currentSong: album.songs[0],
 		isPlaying: false,
+		class: 'base'
 	};
 
 this.audioElement = document.createElement('audio');
@@ -46,12 +47,16 @@ handleSongClick(song) {
 }
 
 mouseEnter() {
-	console.log("Enter Test")
+	if (this.state.isPlaying === false) {
+		this.setState({ class: 'icon ion-md-play'})
+	}
 	
 }
 
 mouseLeave() {
-	console.log("Leave Test")
+	if (this.state.isPlaying === true) {
+		this.setState({ class: 'icon ion-md-pause'})
+	}
 }
 
 
@@ -73,13 +78,16 @@ mouseLeave() {
 						<col id="song-duration-column" />
 					</colgroup>
 					<tbody>
+
 						{
 							this.state.album.songs.map( (songs, index) =>
-								<tr className="song" key={index} onClick={() => this.handleSongClick(songs)} onMouseEnter={() => this.mouseEnter()} onMouseLeave={() => this.mouseLeave()} >
-									<span id="icon"><td>{index+1}</td></span>
+								
+								<tr className="song" key={index} onClick={() => this.handleSongClick(songs)} >
+									<td><span className={this.state.class} onMouseEnter={() => this.mouseEnter()} onMouseLeave={() => this.mouseLeave()} >{index+1}</span></td>
 									<td>{songs.title}</td>
 									<td>{songs.duration} seconds</td>
 								</tr>
+								
 							)
 						}
 					</tbody>
