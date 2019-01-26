@@ -22,6 +22,19 @@ class Album extends Component {
 
 this.audioElement = document.createElement('audio');
 this.audioElement.src = album.songs[0].audioSrc;
+
+}
+
+formatTime(toFormat) {
+ 	const minutes = Math.floor(toFormat / 60);
+ 	const seconds = Math.round(toFormat % 60);
+if (seconds < 10 ) {
+ 	return minutes + ':0' + seconds;
+} else if (isNaN(toFormat)) {
+	return '-:--';
+} else {
+	return minutes + ':' + seconds;
+}
 }
 
 componentDidMount() {
@@ -146,7 +159,7 @@ handleVolumeChange(e) {
 								<tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.mouseEnter(song)} onMouseLeave={() => this.mouseLeave()} >
 									<td>{this.renderButton(song, index)}</td>
 									<td>{song.title}</td>
-									<td>{song.duration} seconds</td>
+									<td>{this.formatTime(song.duration)}</td>
 								</tr>
 								
 							)
@@ -159,6 +172,7 @@ handleVolumeChange(e) {
 					currentTime={this.audioElement.currentTime}
 					duration={this.audioElement.duration}
 					volume={this.state.volume}
+					formatTime={(toFormat) => this.formatTime(toFormat)}
 					handleSongClick={() => this.handleSongClick(this.state.currentSong)}
 					handlePrevClick={() => this.handlePrevClick()}
 					handleNextClick={() => this.handleNextClick()}
