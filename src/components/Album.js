@@ -32,25 +32,20 @@ componentDidMount() {
 		durationchange: e => {
 			this.setState({ duration: this.audioElement.duration });
 		},
-		volumeUp: e => {
-			this.setState({ volume: this.audioElement.volume });
-		},
-		volumeDown: e => {
+		volumeChange: e => {
 			this.setState({ volume: this.audioElement.volume });
 		}
 	};
 	this.audioElement.addEventListener('timeupdate', this.eventListeners.timeupdate);
 	this.audioElement.addEventListener('durationchange', this.eventListeners.durationchange);
-	this.audioElement.addEventListener('volumeUp', this.eventListeners.volumechange);
-	this.audioElement.addEventListener('volumeDown', this.eventListeners.volumechange);
+	this.audioElement.addEventListener('volumeChangep', this.eventListeners.volumechange);
 }
 
 componentWillUnmount() {
 	this.audioElement.src = null;
 	this.audioElement.removeEventListener('timeupdate', this.eventListeners.timeupdate);
 	this.audioElement.removeEventListener('durationchange', this.eventListeners.durationchange);
-	this.audioElement.removeEventListener('volumeUp', this.eventListeners.volumechange);
-	this.audioElement.addEventListener('volumeDown', this.eventListeners.volumechange);
+	this.audioElement.addEventListener('volumeChangep', this.eventListeners.volumechange);
 }
 
 play() {
@@ -120,18 +115,9 @@ handleTimeChange(e) {
 	this.setState({ currentTime: newTime });
 }
 
-handleVolumeDown(e) {
-	const currentVolume = this.audioElement.volume
-	const volumeDown = Math.min(0, currentVolume - 0.1);
-	const newVolume = currentVolume - volumeDown;
-	this.setState({volume: newVolume})
-}
-
-handleVolumeUp(e) {
-	const currentVolume = this.audioElement.volume
-	const volumeUp = Math.max(1, currentVolume + 0.1);
-	const newVolume = currentVolume + volumeUp;
-	this.setState({volume: newVolume})
+handleVolumeChange(e) {
+	this.audioElement.volume = e.target.value
+	this.setState({volume: e.target.value})
 }
 
 
@@ -177,8 +163,7 @@ handleVolumeUp(e) {
 					handlePrevClick={() => this.handlePrevClick()}
 					handleNextClick={() => this.handleNextClick()}
 					handleTimeChange={(e) => this.handleTimeChange(e)}
-					handleVolumeUp={(e) => this.handleVolumeChange(e)}
-					handleVolumeDown={(e) => this.handleVolumeChange(e)}
+					handleVolumeChange={(e) => this.handleVolumeChange(e)}
 				/>
 			</section>
 		);
