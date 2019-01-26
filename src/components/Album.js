@@ -13,7 +13,7 @@ class Album extends Component {
 		album: album,
 		currentSong: album.songs[0],
 		isPlaying: false,
-		class: ''
+		hovered: null
 	};
 
 this.audioElement = document.createElement('audio');
@@ -47,18 +47,22 @@ handleSongClick(song) {
 }
 
 mouseEnter(song) {
-	this.setState( {hovered: song} );
-	if (this.state.isPlaying === true) {
-		if (song === this.state.currentSong)
-			return "<span className='icon ion-md-play'></span>";
-	}
-	
+	this.setState( {hovered: song} );	
 }
 
-mouseLeave(song) {
-	if (this.state.isPlaying === true) {
-		this.setState({ class: 'icon ion-md-pause'})
+mouseLeave() {
+	this.setState( {hovered: null });
+}
+
+renderButton(song, index) {
+	if (this.state.isPlaying && song === this.state.currentSong) {
+		return <span className='icon ion-md-pause'></span>;
+	} else if (song === this.state.hovered) {
+		return <span className='icon ion-md-play'></span>;
+	} else {
+		return index+1;
 	}
+
 }
 
 
@@ -84,8 +88,8 @@ mouseLeave(song) {
 						{
 							this.state.album.songs.map( (song, index) =>
 								
-								<tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.mouseEnter(song)} onMouseLeave={() => this.mouseLeave(song)} >
-									<td>{index+1}</td>
+								<tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.mouseEnter(song)} onMouseLeave={() => this.mouseLeave()} >
+									<td>{this.renderButton(song, index)}</td>
 									<td>{song.title}</td>
 									<td>{song.duration} seconds</td>
 								</tr>
