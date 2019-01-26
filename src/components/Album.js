@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
+import PlayerBar from './PlayerBar';
 
 class Album extends Component {
 	constructor(props) {
@@ -55,6 +56,7 @@ mouseLeave() {
 }
 
 renderButton(song, index) {
+
 	if (this.state.isPlaying && song === this.state.currentSong) {
 		return <span className='icon ion-md-pause'></span>;
 	} else if (song === this.state.hovered) {
@@ -63,6 +65,14 @@ renderButton(song, index) {
 		return index+1;
 	}
 
+}
+
+handlePrevClick() {
+	const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
+	const newIndex = Math.max(0, currentIndex - 1);
+	const newSong = this.state.album.songs[newIndex];
+	this.setSong(newSong);
+	this.play();	
 }
 
 
@@ -98,6 +108,12 @@ renderButton(song, index) {
 						}
 					</tbody>
 				</table>
+				<PlayerBar 
+					isPlaying={this.state.isPlaying} 
+					currentSong={this.state.currentSong}
+					handleSongClick={() => this.handleSongClick(this.state.currentSong)}
+					handlePrevClick={() => this.handlePrevClick()}
+				/>
 			</section>
 		);
 	}
