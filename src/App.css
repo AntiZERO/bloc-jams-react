@@ -153,12 +153,14 @@ h1.site-title {
   font-family: 'Righteous', cursive;
   font-size: 50px;
   text-decoration-line: underline;
+  color: #d3d3d3;
 }
 
 .artist {
   margin-top: -10px;
   font-size: 20px;
   font-family: 'Oswald', sans-serif;
+  color: #d3d3d3;
 }
 
 #release-info {
@@ -166,6 +168,7 @@ h1.site-title {
   font-size: 10px;
   padding-bottom: 3px;
   font-style: italic;
+  color: #d3d3d3;
 }
 
 #song-list {
@@ -189,10 +192,12 @@ h1.site-title {
 
 #time-control{
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  color: #d3d3d3;
 }
 
 #volume-control {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  color: #d3d3d3;
 }
 
 .btnPlay {
