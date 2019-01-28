@@ -13,7 +13,6 @@ class App extends Component {
           <nav className="btn-group" role="group" aria-label="Nav Bar">
             <button type="button" className="btn btn-dark"><Link to='/'>Landing</Link></button>
             <button type="button" className="btn btn-dark"><Link to='/library'>Library</Link></button>
-            <button type="button" className="btn btn-dark"><Link to="/album">Album</Link></button>
           </nav>
           <h1 className='site-title'>Bloc Jams</h1>
         </header>
