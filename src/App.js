@@ -15,7 +15,7 @@ class App extends Component {
             <button type="button" className="btn btn-dark"><Link to='/library'>Library</Link></button>
             <button type="button" className="btn btn-dark"><Link to="/album">Album</Link></button>
           </nav>
-          <h1>Bloc Jams</h1>
+          <h1 className='site-title'>Bloc Jams</h1>
         </header>
         <main>
           <Route exact path="/" component={Landing} />

@@ -1,50 +1,12 @@
+/* All Content */
+
 body {
   background-color: #494551;
 }
 
-
-.btn-group {
-  text-align: center;
-  width: 100%;
-}
-
-.App {
-  background-color: #494551;
-  color: #dbe3ff;
-}
-
-h1 {
-  color: #f46161;
-  text-align: center;
-  font-family: 'Audiowide', cursive;
-  letter-spacing: -5px;
-  font-size: 100px;
-  text-decoration-line: underline;
-  text-shadow:
-   -1px -1px 0 #000,  
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-     1px 1px 0 #000;
-
-
-}
-
-.hero-title {
-  color: #d3d3d3;
-  text-align: center;
-  font-size: 24px;
-  font-family: 'Orbitron', sans-serif;
-  position: relative;
-  bottom: 20px;
-  text-shadow:
-   -1px -1px 0 #000,  
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-     1px 1px 0 #000;
-}
-
 a {
 color: #f46161;
+text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 a:visited {
@@ -56,6 +18,275 @@ a:active {
 }
 
 a:hover{
-  color: #d3d3d3;
+  color: #f9a9a9;
 
+}
+
+/*h1 is on all pages*/
+h1.site-title { 
+  color: #f46161;
+  text-align: center;
+  font-family: 'Audiowide', cursive;
+  letter-spacing: -5px;
+  font-size: 100px;
+  text-decoration-line: underline;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+/* App Main */
+.App {
+  background-color: #494551;
+  color: #dbe3ff;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1080px;
+  padding-right: 10px;
+  padding-left: 10px;
+  min-height: 250%;
+}
+
+/*App.js <nav>*/
+.btn-group {
+  text-align: center;
+  width: 100%;
+  border-style: solid;
+  border-color: #f46161;
+  border-width: 1px;
+  border-radius: 4px;
+}
+
+/*Landing.js Begin */
+
+.hero-title {
+  color: #d3d3d3;
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Orbitron', sans-serif;
+  position: relative;
+  bottom: 20px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.selling-points {
+  color: #d3d3d3;
+  padding-top: 75px;
+  column-count: 3;
+  column-gap: 40px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.point {
+  height: auto;
+  text-align: center;
+  position: relative;
+}
+
+.point-title {
+  font-family: 'Righteous', cursive;
+   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.point-description {
+  padding-top: 25px;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.point-image {
+  max-width:90%;
+  max-height: 100%;
+  border-radius: 120px 20px 120px 20px;
+  box-shadow: 10px 10px 5px #f46161;
+
+}
+
+.point-image#PtImg1, #PtImg3 {
+  margin-top: 60px;
+} 
+.point-image#PtImg2 {
+  margin-top: 20px;
+}
+
+/*Library.js Begin */
+
+.library {
+  margin: auto;
+  padding-top: 50px;
+  columns: 4;
+  column-gap: 4px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.cover-art {
+  max-width:90%;
+  max-height: 100%;
+  border-radius: 10%;
+  box-shadow: 10px 10px 5px #f46161;
+  margin-bottom: 20px;
+}
+
+/*Album.js Begin*/
+
+.album {
+  columns: 3;
+}
+
+#album-cover-art {
+  max-width:70%;
+  max-height: 70%;
+  border-radius: 10%;
+  box-shadow: 10px 10px 5px #f46161;
+  margin-left: 80px;
+  margin-bottom: 20px;
+}
+
+.album-details {
+  margin: auto;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#album-title {
+  padding-top: 10px;
+  font-family: 'Righteous', cursive;
+  font-size: 50px;
+  text-decoration-line: underline;
+}
+
+.artist {
+  margin-top: -10px;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+}
+
+#release-info {
+  margin-top: -9px;
+  font-size: 10px;
+  padding-bottom: 3px;
+  font-style: italic;
+}
+
+#song-list {
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.song{
+  color: #f46161;
+}
+
+/* PlayerBar.js Begins */
+
+#playerBar {
+  position:relative;
+  bottom: 0;
+  text-align: center;
+  margin: auto;
+  width: 99.9%;
+}
+
+#time-control{
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+#volume-control {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.btnPlay {
+  box-shadow:inset 0px 0px 15px 3px #494551;
+  background-color:#6e687a;
+  border-radius: 50px;
+  border:1px solid #000;
+  color:#f46161;
+  font-size:20px;
+  padding:5px 15px;
+  text-align: center;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.btnPlay:hover {
+  background-color:#f46161;
+  color: #6e687a;
+  text-shadow: -1px -1px 0 #f9a9a9, 1px -1px 0 #f9a9a9, -1px 1px 0 #f9a9a9, 1px 1px 0 #f9a9a9;
+}
+.btnPlay:active {
+  position:relative;
+  top:1px;
+}
+
+.btnNext {
+  box-shadow:inset 0px 0px 15px 3px #494551;
+  background-color:#6e687a;
+  border-radius: 50px;
+  border:1px solid #000;
+  color:#f46161;
+  font-size:20px;
+  padding:5px 15px;
+  text-align: center;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.btnNext:hover {
+  background-color:#f46161;
+  color: #6e687a;
+  text-shadow: -1px -1px 0 #f9a9a9, 1px -1px 0 #f9a9a9, -1px 1px 0 #f9a9a9, 1px 1px 0 #f9a9a9;
+}
+.btnNext:active {
+  position:relative;
+  top:1px;
+}
+
+.btnPrev {
+  box-shadow:inset 0px 0px 15px 3px #494551;
+  background-color:#6e687a;
+  border-radius: 50px;
+  border:1px solid #000;
+  color:#f46161;
+  font-size:20px;
+  padding:5px 15px;
+  text-align: center;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.btnPrev:hover {
+  background-color:#f46161;
+  color: #6e687a;
+  text-shadow: -1px -1px 0 #f9a9a9, 1px -1px 0 #f9a9a9, -1px 1px 0 #f9a9a9, 1px 1px 0 #f9a9a9;
+}
+.btnPrev:active {
+  position:relative;
+  top:1px;
+}
+
+/* range bar */
+
+input[type=range] {
+  -webkit-appearance: none;
+  height: 38px;
+  margin: 10px 0;
+  width: 100%;
+  background-color: #494551;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000;
+  background: #F46161;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 30px;
+  width: 29px;
+  border-radius: 16px;
+  background: #6E687A;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -11px;
 }

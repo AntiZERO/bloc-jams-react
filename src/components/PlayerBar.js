@@ -5,20 +5,20 @@ class PlayerBar extends Component {
       return(
          <section className="player-bar">
             <section id="buttons">
-                <button id="previous" onClick={this.props.handlePrevClick}>
+                <button id="previous" className='btnPrev' onClick={this.props.handlePrevClick}>
                     <span className="icon ion-md-skip-backward"></span>
                 </button>
-                <button id="play-pause" onClick={this.props.handleSongClick}>
+                <button id="play-pause" className='btnPlay' onClick={this.props.handleSongClick}>
                     <span className={this.props.isPlaying ? 'icon ion-md-pause' : 'icon ion-md-play'}></span>
                 </button>
-                <button id="next" onClick={this.props.handleNextClick}>
+                <button id="next" className='btnNext' onClick={this.props.handleNextClick}>
                     <span className="icon ion-md-skip-forward"></span>
                 </button>
             </section>
 
     
             <section id="time-control">
-                <div className="current-Time">{this.props.formatTime(this.props.currentTime)}</div>
+                <div className="current-Time"> Current Time: {this.props.formatTime(this.props.currentTime)}</div>
                 <input
                     type="range"
                     className="seek-bar"
@@ -28,10 +28,10 @@ class PlayerBar extends Component {
                     step="0.01"
                     onChange={this.props.handleTimeChange}
                 />
-                <div className="total-time">{this.props.formatTime(this.props.duration)}</div>
+                <div className="total-time">Total Time: {this.props.formatTime(this.props.duration)}</div>
             </section>
             <section id="volume-control">
-                <div className="current-Volume">{this.props.volume}</div>
+                <div className="current-Volume">Volume: {this.props.volume}</div>
                 <input 
                     type="range" 
                     className="seek-bar" 

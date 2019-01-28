@@ -166,6 +166,7 @@ handleVolumeChange(e) {
 						}
 					</tbody>
 				</table>
+				<div id='playerBar'>
 				<PlayerBar 
 					isPlaying={this.state.isPlaying} 
 					currentSong={this.state.currentSong}
@@ -179,6 +180,7 @@ handleVolumeChange(e) {
 					handleTimeChange={(e) => this.handleTimeChange(e)}
 					handleVolumeChange={(e) => this.handleVolumeChange(e)}
 				/>
+				</div>
 			</section>
 		);
 	}
